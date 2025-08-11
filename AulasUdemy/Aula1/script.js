@@ -49,6 +49,65 @@ console.log(`Testando ` + `com ` + `crase`);
 */
 console.log(`A soma de 2 + 2 é: ${2 + 2}`);
 
+// 8 - Booleans
+console.log(true);
+console.log(5 > 20);
+console.log(30 < 10);
+
+// 8 - Comparações
+/*
+     Maior e Menor < >;
+     Igual ==;
+     Maior ou Menor Igual a <= >=;
+     Diferente !=;
+     Identico ===
+*/
+console.log(5 >= 5);
+console.log(5 <= 10);
+console.log(10 == 10);
+console.log(10 != 10);
+
+// 9 - Comparação de Idênticos
+// === e !==
+// avalia os tipos de dados
+console.log(9 === '9');
+console.log(9 !== '9');
+
+// 10 - Operadores Lógicos e Tabela Verdade
+/*
+     and => &&
+     or => ||
+     not => !
+
+               TABELA VERDADE
+     -----------------------------------          
+     A    B    A AND B   A OR B    NOT A
+     -----------------------------------
+     F    F       F        F         T
+     F    T       F        T         T
+     T    F       F        T         F
+     T    T       T        T         F
+     ----------------------------------
+*/
+console.log(true && true);
+console.log(true && false);
+console.log(!true);
+console.log(false || true);
+console.log(5 > 2 && 2 < 10);
+console.log(8 < 8 || 10 > 2);
+
+// 11 - Empty Values
+
+
+
+
+
+
+
+
+
+
+
 
 
 
