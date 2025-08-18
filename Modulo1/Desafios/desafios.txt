@@ -1,0 +1,60 @@
+Exercício 1: Página Básica de Apresentação
+Objetivo: Praticar a estrutura básica do HTML e tags simples.
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Minha Apresentação</title>
+</head>
+<body>
+<!-- COMPLETE O CÓDIGO ABAIXO -->
+<!-- 1. Adicione um título principal com seu nome -->
+<!-- 2. Adicione um subtítulo "Sobre mim" -->
+<!-- 3. Adicione dois parágrafos contando algo sobre você -->
+<!-- 4. Adicione um subtítulo "Meus hobbies" -->
+<!-- 5. Crie uma lista não ordenada com 3 hobbies -->
+</body>
+</html>
+
+Exercício 2: Página de Receita Simples
+Objetivo: Praticar hierarquia de títulos, listas e organização de conteúdo.
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Receita de Bolo</title>
+</head>
+<body>
+<!-- COMPLETE O CÓDIGO ABAIXO -->
+<!-- 1. Título principal com o nome da receita -->
+<!-- 2. Subtítulo "Ingredientes" -->
+<!-- 3. Lista não ordenada com 5 ingredientes -->
+<!-- 4. Subtítulo "Modo de Preparo" -->
+<!-- 5. Lista ordenada com pelo menos 4 passos -->
+<!-- 6. Adicione uma imagem do bolo pronto -->
+<!-- 7. Crie um link para um site de culinária -->
+</body>
+</html>
+Dica: Use <img src="nome-da-imagem.jpg" alt="Bolo de chocolate"> para a
+imagem.
+
+Exercício 3: Página com Links e Atributos
+Objetivo: Praticar links, atributos e organização semântica.l
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Meus Links Favoritos</title>
+</head>
+<body>
+<!-- COMPLETE O CÓDIGO ABAIXO -->
+<!-- 1. Título principal "Meus Sites Favoritos" -->
+<!-- 2. Subtítulo "Redes Sociais" -->
+<!-- 3. Lista não ordenada com 3 links para redes sociais
+(use target="_blank" para abrir em nova aba) -->
+<!-- 4. Subtítulo "Sites Úteis" -->
+<!-- 5. Lista não ordenada com 3 links para sites úteis
+(adicione o atributo title para cada link) -->
+<!-- 6. Adicione um rodapé com seu nome e ano atual -->
+</body>
+</html>
