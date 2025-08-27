@@ -2,11 +2,3 @@
 
 
 ### Repósitorio criado para documentar as aulas e desafios do curso de FronEnd - React do Bolsa Futuro Digital - Polo Softex/PE
-
-Professor(a): 
-
-- Aula 1: 04/08/2025
-- Aula 2: 07/08/2025
-- Aula 3: 12/08/2025
-- Aula 4: 14/08/2025
-
