@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width,initial-scale=1" />
+     <title>Seu Nome — Front-end • UX/UI Designer</title>
+     <meta name="description" content="Currículo de Front-end Developer e UX/UI Designer." />
+     <style>
+          /* =====================================
+           DESIGN TOKENS
+          ====================================== */
+          :root {
+               --bg: #0b0c10;
+               --card: #111316;
+               --text: #e9eef3;
+               --muted: #a8b3bf;
+               --brand: #7c5cff;
+               --brand-2: #00d1b2;
+               --line: #242832;
+               --chip-bg: #1a1f2b;
+               --ok: #22c55e;
+               --warn: #f59e0b;
+               --err: #ef4444;
+               --shadow: 0 10px 30px rgba(0, 0, 0, .25);
+               --radius: 18px;
+               --radius-sm: 12px;
+               --font: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+          }
+
+          @media (prefers-color-scheme: light) {
+               :root {
+                    --bg: #f7f8fb;
+                    --card: #ffffff;
+                    --text: #141a21;
+                    --muted: #516173;
+                    --line: #e7e9ee;
+                    --chip-bg: #f0f2f7;
+               }
+          }
+
+          html,
+          body {
+               height: 100%;
+          }
+
+          body {
+               margin: 0;
+               background: var(--bg);
+               color: var(--text);
+               font-family: var(--font);
+               -webkit-font-smoothing: antialiased;
+               line-height: 1.55;
+          }
+
+          /* =====================================
+          LAYOUT
+          ====================================== */
+          .wrap {
+               max-width: 1100px;
+               margin: 40px auto;
+               padding: 24px;
+          }
+
+          header.header {
+               display: grid;
+               gap: 18px;
+               grid-template-columns: 120px 1fr auto;
+               align-items: center;
+               background: linear-gradient(135deg, var(--card), rgba(124, 92, 255, .09));
+               border: 1px solid var(--line);
+               border-radius: var(--radius);
+               padding: 18px 18px;
+               box-shadow: var(--shadow);
+          }
+
+          .avatar {
+               width: 120px;
+               height: 120px;
+               border-radius: 22px;
+               object-fit: cover;
+               border: 1px solid var(--line);
+               background: #222;
+          }
+
+          .title h1 {
+               font-size: 28px;
+               margin: 0 0 6px;
+               letter-spacing: .3px;
+          }
+
+          .role {
+               color: var(--muted);
+               font-weight: 500;
+          }
+
+          .badges {
+               display: flex;
+               flex-wrap: wrap;
+               gap: 8px;
+               margin-top: 8px;
+          }
+
+          .badge {
+               background: var(--chip-bg);
+               border: 1px solid var(--line);
+               padding: 6px 10px;
+               border-radius: 999px;
+               font-size: 12px;
+          }
+
+          .actions {
+               display: flex;
+               gap: 10px;
+               align-self: start;
+          }
+
+          .btn {
+               border: 1px solid var(--line);
+               background: var(--card);
+               color: var(--text);
+               padding: 10px 14px;
+               border-radius: 12px;
+               cursor: pointer;
+               font-weight: 600;
+               transition: transform .08s ease, background .2s ease, border-color .2s ease;
+               box-shadow: var(--shadow);
+          }
+
+          .btn:hover {
+               transform: translateY(-1px);
+               border-color: var(--brand);
+          }
+
+          .btn.primary {
+               background: linear-gradient(135deg, var(--brand), var(--brand-2));
+               color: #fff;
+               border-color: transparent;
+          }
+
+          /* GRID */
+          .grid {
+               display: grid;
+               grid-template-columns: 320px 1fr;
+               gap: 18px;
+               margin-top: 18px;
+          }
+
+          aside {
+               display: flex;
+               flex-direction: column;
+               gap: 18px;
+          }
+
+          section.card {
+               background: var(--card);
+               border: 1px solid var(--line);
+               border-radius: var(--radius);
+               padding: 16px;
+               box-shadow: var(--shadow);
+          }
+
+          section.card h3 {
+               margin: 0 0 12px;
+               font-size: 16px;
+               letter-spacing: .3px;
+          }
+
+          .list {
+               display: flex;
+               flex-direction: column;
+               gap: 10px;
+          }
+
+          .kv {
+               display: flex;
+               justify-content: space-between;
+               gap: 12px;
+          }
+
+          .kv .k {
+               color: var(--muted);
+          }
+
+          .chips {
+               display: flex;
+               flex-wrap: wrap;
+               gap: 8px;
+          }
+
+          .chip {
+               background: var(--chip-bg);
+               border: 1px solid var(--line);
+               padding: 6px 10px;
+               border-radius: 999px;
+               font-size: 12px;
+          }
+
+          main {
+               display: flex;
+               flex-direction: column;
+               gap: 18px;
+          }
+
+          .summary p {
+               margin: 0;
+               color: var(--muted);
+          }
+
+          /* TIMELINE */
+          .timeline {
+               position: relative;
+          }
+
+          .timeline::before {
+               content: "";
+               position: absolute;
+               left: 10px;
+               top: 0;
+               bottom: 0;
+               width: 2px;
+               background: var(--line);
+          }
+
+          .tl-item {
+               position: relative;
+               padding-left: 28px;
+               margin-bottom: 18px;
+          }
+
+          .tl-item::before {
+               content: "";
+               position: absolute;
+               left: 4px;
+               top: 5px;
+               width: 14px;
+               height: 14px;
+               border-radius: 50%;
+               background: var(--brand);
+               box-shadow: 0 0 0 3px rgba(124, 92, 255, .25);
+          }
+
+          .tl-h {
+               display: flex;
+               justify-content: space-between;
+               gap: 10px;
+          }
+
+          .tl-job {
+               font-weight: 700;
+          }
+
+          .tl-meta {
+               color: var(--muted);
+               font-size: 13px;
+          }
+
+          .tl-desc {
+               color: var(--muted);
+               margin-top: 6px;
+          }
+
+          .tl-tags {
+               margin-top: 8px;
+          }
+
+          /* PROJECTS */
+          .projects {
+               display: grid;
+               grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+               gap: 14px;
+          }
+
+          .project {
+               border: 1px solid var(--line);
+               background: var(--card);
+               border-radius: 16px;
+               padding: 14px;
+               display: flex;
+               flex-direction: column;
+               gap: 10px;
+          }
+
+          .project .p-head {
+               display: flex;
+               justify-content: space-between;
+               gap: 10px;
+               align-items: center;
+          }
+
+          .project .p-title {
+               font-weight: 700;
+          }
+
+          .project .p-links {
+               display: flex;
+               gap: 8px;
+          }
+
+          .a {
+               font-size: 13px;
+               text-decoration: none;
+               border: 1px solid var(--line);
+               padding: 6px 10px;
+               border-radius: 10px;
+               color: var(--text);
+          }
+
+          .a:hover {
+               border-color: var(--brand);
+          }
+
+          .p-desc {
+               color: var(--muted);
+               font-size: 14px;
+          }
+
+          /* SKILL BARS */
+          .bar {
+               height: 9px;
+               background: var(--line);
+               border-radius: 999px;
+               overflow: hidden;
+          }
+
+          .bar>i {
+               display: block;
+               height: 100%;
+               background: linear-gradient(90deg, var(--brand), var(--brand-2));
+               width: var(--val, 70%);
+          }
+
+          .skill {
+               display: grid;
+               grid-template-columns: 1fr 40px;
+               align-items: center;
+               gap: 8px;
+          }
+
+          .skill-name {
+               font-size: 13px;
+               color: var(--muted);
+          }
+
+          /* FOOTER */
+          footer {
+               text-align: center;
+               color: var(--muted);
+               margin: 22px 0 10px;
+               font-size: 12px;
+          }
+
+          /* PRINT (PDF bonito) */
+          @media print {
+               body {
+                    background: #fff;
+                    color: #111;
+               }
+
+               .wrap {
+                    margin: 0;
+                    max-width: none;
+                    padding: 0;
+               }
+
+               header.header,
+               section.card {
+                    box-shadow: none;
+               }
+
+               .actions {
+                    display: none !important;
+               }
+
+               .a {
+                    border: 1px solid #bbb;
+               }
+          }
+
+          /* RESPONSIVO */
+          @media (max-width: 860px) {
+               .grid {
+                    grid-template-columns: 1fr;
+               }
+
+               header.header {
+                    grid-template-columns: 80px 1fr;
+               }
+
+               .avatar {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 16px;
+               }
+          }
+     </style>
+</head>
+
+<body>
+     <div class="wrap" id="cv">
+          <!-- ================= HEADER ================= -->
+          <header class="header">
+               <img class="avatar"
+                    src="/Curriculum\teste\IMG_2455.JPEG"
+                    alt="Seu retrato" />
+               <div class="title">
+                    <h1>Paula Roberta Arruda</h1>
+                    <div class="role">Front-end Developer • UX/UI Designer</div>
+                    <div class="badges">
+                         <span class="badge">React Native • TypeScript • JavaScript</span>
+                         <span class="badge">Design Systems</span>
+                         <span class="badge">Figma → Code</span>
+                    </div>
+               </div>
+               <div class="actions">
+                    <button class="btn" id="toggle-theme" aria-label="Alternar tema">🌗 Tema</button>
+                    <button class="btn" id="copy-email" data-email="voce@email.com" aria-label="Copiar email">✉️
+                         Email</button>
+                    <button class="btn primary" onclick="window.print()" aria-label="Baixar PDF">⬇︎ PDF</button>
+               </div>
+          </header>
+
+          <div class="grid">
+               <!-- ================= SIDEBAR ================= -->
+               <aside>
+                    <section class="card" aria-labelledby="contatos">
+                         <h3 id="contatos">Contato</h3>
+                         <div class="list">
+                              <div class="kv"><span class="k">Cidade</span><span>Recife, PE</span></div>
+                              <div class="kv"><span class="k">Email</span><span><a class="a"
+                                             href="paularobertaarruda@icloud.com">paularobertaarruda@icloud.com</a></span>
+                              </div>
+                              <div class="kv"><span class="k">Telefone</span><span><a class="a"
+                                             href="tel:+5581999714984">+55 (81) 9 9971-4984</a></span></div>
+                              <div class="kv"><span class="k">GitHub</span><span><a class="a"
+                                             href="https://github.com/paularcsarruda" target="_blank"
+                                             rel="noopener">github.com/paularcsarruda</a></span></div>
+                              <div class="kv"><span class="k">LinkedIn</span><span><a class="a"
+                                             href="https://linkedin.com/in/seuuser" target="_blank"
+                                             rel="noopener">/in/seuuser</a></span></div>
+                         </div>
+                    </section>
+
+                    <section class="card" aria-labelledby="skills-tech">
+                         <h3 id="skills-tech">Competências Técnicas</h3>
+                         <div class="list">
+                              <div class="skill"><span class="skill-name">HTML5/CSS3</span>
+                                   <div class="bar" style="--val:75%"><i></i></div>
+                              </div>
+                              <div class="skill"><span class="skill-name">JavaScript/TypeScript</span>
+                                   <div class="bar" style="--val:70%"><i></i></div>
+                              </div>
+                              <div class="skill"><span class="skill-name">React Native/ Next.js</span>
+                                   <div class="bar" style="--val:65%"><i></i></div>
+                              </div>
+                              <div class="skill"><span class="skill-name">Node.js</span>
+                                   <div class="bar" style="--val:40%"><i></i></div>
+                              </div>
+                         </div>
+                         <div class="chips" style="margin-top:10px">
+                              <span class="chip">Figma</span>
+                              <span class="chip">Design System</span>
+                              <span class="chip">Storybook</span>
+                         </div>
+                    </section>
+
+                    <section class="card" aria-labelledby="skills-ux">
+                         <h3 id="skills-ux">UX/UI & Processos</h3>
+                         <div class="chips">
+                              <span class="chip">Pesquisa com usuários</span>
+                              <span class="chip">Mapas de Jornada</span>
+                              <span class="chip">Arquitetura de Informação</span>
+                              <span class="chip">Wireframes → Hi‑fi</span>
+                              <span class="chip">Prototipação</span>
+                              <span class="chip">Teste de Usabilidade</span>
+                         </div>
+                    </section>
+
+                    <section class="card" aria-labelledby="idiomas">
+                         <h3 id="idiomas">Idiomas</h3>
+                         <div class="list">
+                              <div class="kv"><span class="k">Português</span><span>Nativo</span></div>
+                              <div class="kv"><span class="k">Inglês</span><span>Avançado</span></div>
+                         </div>
+                    </section>
+
+                    <section class="card" aria-labelledby="certs">
+                         <h3 id="certs">Certificações</h3>
+                         <ul class="list" style="padding-left:18px; margin:0">
+                              <li>Google UX Design (Coursera), 2025</li>
+                         </ul>
+                    </section>
+               </aside>
+
+               <!-- ================= MAIN ================= -->
+               <main>
+                    <section class="card summary" aria-labelledby="sobre">
+                         <h3 id="sobre">Resumo</h3>
+                         <p>
+                              Graduada em Análise e Desenvolvimento de Sistemas pelo Senac/SP e em Direito pela
+                              Uninassau. Atuei como estagiária e, posteriormente, como Trainee com foco em Engenharia de Dados na Compass UOL. Atualmente, foco meus esforços no desenvolvimento de aplicações back-end e front-end utilizando Java, React Native, HTML, CSS e JS.
+                         </p>
+                    </section>
+
+                    <section class="card" aria-labelledby="projetos">
+                         <h3 id="projetos">Projetos em Destaque</h3>
+                         <div class="projects">
+                              <article class="project">
+                                   <div class="p-head">
+                                        <div class="p-title">Design System "Aurora"</div>
+                                        <div class="p-links">
+                                             <a class="a" href="#">Demo</a>
+                                             <a class="a" href="#">Repositório</a>
+                                        </div>
+                                   </div>
+                                   <div class="p-desc">Biblioteca de componentes React/TS com tokens, temas e docs em
+                                        Storybook; aumento de 40% na velocidade de entrega.</div>
+                                   <div class="chips tl-tags">
+                                        <span class="chip">React</span><span class="chip">TypeScript</span><span
+                                             class="chip">Storybook</span><span class="chip">A11y</span>
+                                   </div>
+                              </article>
+
+                              <article class="project">
+                                   <div class="p-head">
+                                        <div class="p-title">App de Medicamentos "Medi+"</div>
+                                        <div class="p-links">
+                                             <a class="a" href="#">Case</a>
+                                             <a class="a" href="#">Figma</a>
+                                        </div>
+                                   </div>
+                                   <div class="p-desc">Pesquisa com usuários, wireframes e alta fidelidade;
+                                        implementação em React Native com notificações e histórico.</div>
+                                   <div class="chips tl-tags">
+                                        <span class="chip">UX Research</span><span class="chip">Figma</span><span
+                                             class="chip">React Native</span>
+                                   </div>
+                              </article>
+
+                              <article class="project">
+                                   <div class="p-head">
+                                        <div class="p-title">Dashboard de Métricas</div>
+                                        <div class="p-links">
+                                             <a class="a" href="#">Live</a>
+                                             <a class="a" href="#">Repo</a>
+                                        </div>
+                                   </div>
+                                   <div class="p-desc">Next.js + charts; foco em performance (LCP &lt; 1.8s) e
+                                        acessibilidade (teclado e ARIA completos).</div>
+                                   <div class="chips tl-tags">
+                                        <span class="chip">Next.js</span><span class="chip">Vercel</span><span
+                                             class="chip">A11y</span>
+                                   </div>
+                              </article>
+                         </div>
+                    </section>
+
+                    <section class="card" aria-labelledby="experiencia">
+                         <h3 id="experiencia">Experiência</h3>
+                         <div class="timeline">
+                              <div class="tl-item">
+                                   <div class="tl-h">
+                                        <div>
+                                             <div class="tl-job">Front-end & UX/UI — Empresa X</div>
+                                             <div class="tl-meta">Remoto • Produto SaaS</div>
+                                        </div>
+                                        <div class="tl-meta">2023 — atual</div>
+                                   </div>
+                                   <div class="tl-desc">Liderança na criação de Design System; migração para React/TS;
+                                        redução de bugs em 35% e melhor NPS (+12).</div>
+                                   <div class="chips tl-tags"><span class="chip">Design System</span><span
+                                             class="chip">React</span><span class="chip">OKRs</span></div>
+                              </div>
+
+                              <div class="tl-item">
+                                   <div class="tl-h">
+                                        <div>
+                                             <div class="tl-job">UX/UI Designer — Estúdio Y</div>
+                                             <div class="tl-meta">Híbrido • Projetos Mobile</div>
+                                        </div>
+                                        <div class="tl-meta">2021 — 2023</div>
+                                   </div>
+                                   <div class="tl-desc">Discovery, testes e protótipos para apps; melhorias de conversão
+                                        até 18% em fluxo de onboarding.</div>
+                                   <div class="chips tl-tags"><span class="chip">Pesquisa</span><span
+                                             class="chip">Prototipação</span><span class="chip">Métricas</span></div>
+                              </div>
+
+                              <div class="tl-item">
+                                   <div class="tl-h">
+                                        <div>
+                                             <div class="tl-job">Desenvolvedora Front-end — Agência Z</div>
+                                             <div class="tl-meta">Recife • Sites e Landing Pages</div>
+                                        </div>
+                                        <div class="tl-meta">2019 — 2021</div>
+                                   </div>
+                                   <div class="tl-desc">Criação de componentes e páginas responsivas, foco em SEO
+                                        técnico e acessibilidade.</div>
+                                   <div class="chips tl-tags"><span class="chip">SEO</span><span
+                                             class="chip">Performance</span><span class="chip">WCAG</span></div>
+                              </div>
+                         </div>
+                    </section>
+
+                    <section class="card" aria-labelledby="edu">
+                         <h3 id="edu">Formação</h3>
+                         <div class="list">
+                              <div class="kv"><span class="k">Análise e Desenvolvimento de Sistemas</span><span>SENAC •
+                                        2023 —
+                                        2025</span></div>
+                              <div class="kv"><span class="k">Bolsa Futuro Digital - Front End
+                                        (cursando)</span><span>SOFTEX • 2025 —
+                                        atual</span></div>
+                              <div class="kv"><span class="k">Pós Graduação UX Design (cursando)</span><span>SENAC •
+                                        2025 —
+                                        atual</span></div>
+                         </div>
+                    </section>
+               </main>
+          </div>
+
+          <footer>
+               Última atualização: <span id="last-updated"></span> · Disponível em PDF (Ctrl/Cmd+P)
+          </footer>
+     </div>
+
+     <script>
+          // ======= util: data de atualização =======
+          const fmt = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'medium' });
+          document.getElementById('last-updated').textContent = fmt.format(new Date());
+
+          // ======= alternância de tema leve/escuro =======
+          const btnTheme = document.getElementById('toggle-theme');
+          const STORAGE_KEY = 'cv-theme';
+          const applyTheme = (mode) => {
+               if (mode === 'light') {
+                    document.documentElement.style.setProperty('--bg', '#f7f8fb');
+                    document.documentElement.style.setProperty('--card', '#ffffff');
+                    document.documentElement.style.setProperty('--text', '#141a21');
+                    document.documentElement.style.setProperty('--muted', '#516173');
+                    document.documentElement.style.setProperty('--line', '#e7e9ee');
+                    document.documentElement.style.setProperty('--chip-bg', '#f0f2f7');
+               } else {
+                    document.documentElement.style.setProperty('--bg', '#0b0c10');
+                    document.documentElement.style.setProperty('--card', '#111316');
+                    document.documentElement.style.setProperty('--text', '#e9eef3');
+                    document.documentElement.style.setProperty('--muted', '#a8b3bf');
+                    document.documentElement.style.setProperty('--line', '#242832');
+                    document.documentElement.style.setProperty('--chip-bg', '#1a1f2b');
+               }
+               localStorage.setItem(STORAGE_KEY, mode);
+          };
+          const saved = localStorage.getItem(STORAGE_KEY);
+          if (saved) applyTheme(saved);
+          btnTheme?.addEventListener('click', () => {
+               const mode = (localStorage.getItem(STORAGE_KEY) || 'dark') === 'dark' ? 'light' : 'dark';
+               applyTheme(mode);
+          });
+
+          // ======= copiar e-mail =======
+          const btnCopy = document.getElementById('copy-email');
+          btnCopy?.addEventListener('click', async (e) => {
+               const email = e.currentTarget.getAttribute('data-email');
+               try {
+                    await navigator.clipboard.writeText(email);
+                    const prev = e.currentTarget.textContent;
+                    e.currentTarget.textContent = '✔ Copiado!';
+                    setTimeout(() => { e.currentTarget.textContent = prev; }, 1200);
+               } catch (err) {
+                    alert('Não foi possível copiar o email.');
+               }
+          });
+
+          // ======= acessibilidade rápida via teclado =======
+          document.addEventListener('keydown', (ev) => {
+               if (ev.key.toLowerCase() === 'p' && (ev.ctrlKey || ev.metaKey)) {
+                    // deixa visível todos os detalhes antes de imprimir, se houver
+               }
+          });
+     </script>
+
+     <!-- JSON-LD básico para rich results (opcional) -->
+     <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Seu Nome Completo",
+    "jobTitle": "Front-end Developer e UX/UI Designer",
+    "email": "mailto:voce@email.com",
+    "url": "https://seu-portfolio.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/seuuser",
+      "https://github.com/seuuser"
+    ],
+    "address": {"@type":"PostalAddress","addressLocality":"Recife","addressRegion":"PE","addressCountry":"BR"}
+  }
+  </script>
+</body>
+
+</html>

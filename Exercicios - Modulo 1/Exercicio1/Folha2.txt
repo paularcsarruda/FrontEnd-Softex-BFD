@@ -1,0 +1,54 @@
+Exercício de fixação - MÓDULO 1- AULA 5
+Objetivo: Criar uma página HTML com CSS externo, aplicando seletores e propriedades aprendidos em aula.
+Passo 1: Organizar a pasta do projeto
+    1. Crie uma pasta chamada meu-site.
+
+    2. Dentro dela, crie:
+
+        ◦ index.html → página principal.
+
+        ◦ estilo.css → arquivo para os estilos CSS.
+
+        ◦ (Opcional) imagens/ → pasta para colocar fotos ou imagens.
+
+Passo 2: Estrutura HTML
+No arquivo index.html, inclua:
+    • Um título (<h1>) com “Meu Perfil”.
+
+    • Um parágrafo (<p>) se apresentando.
+
+    • Um segundo parágrafo (<p>) com um ID, falando sobre sua profissão ou interesse.
+
+    • Uma imagem (<img>) representando você (use qualquer imagem disponível ou gerada por IA).
+
+    • Uma lista (<ul>) com três hobbies ou atividades favoritas.
+
+Dica: Cada elemento pode ter classe ou ID para receber estilo no CSS.
+Passo 3: Criar o CSS externo
+No arquivo estilo.css, aplique:
+    • Cor, fonte e tamanho nos títulos e parágrafos.
+
+    • Fundo e borda para algum parágrafo usando classe.
+
+    • Estilo único em algum elemento usando ID.
+
+    • Redimensionar a imagem e centralizá-la.
+
+    • Cor do texto da lista de hobbies.
+
+Exemplo conceitual (não copiar, apenas referência):
+    • Título azul e centralizado.
+
+    • Parágrafo com fundo amarelo e borda pontilhada.
+
+    • Imagem redonda.
+
+    • Lista com texto verde.
+
+Passo 4: Testar
+    • Abra o index.html no navegador.
+
+    • Veja se os estilos do CSS estão aplicados corretamente.
+
+    • Experimente mudar cores, fontes e tamanhos para ver como cada propriedade funciona.
+

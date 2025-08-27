@@ -1,0 +1,109 @@
+/* Reset básico e estilo do body */
+body {
+     margin: 0;
+     padding: 40px 60px;
+     font-family: "Quicksand", sans-serif;
+     background: linear-gradient(120deg, #fdfbfb, #ebedee);
+     color: #333;
+}
+
+/* Título */
+h1 {
+     color: #4a90e2;
+     text-align: center;
+     font-size: 42px;
+     margin-top: 40px;
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.apresentacao {
+     background-color: #ffffffcc;
+     padding: 20px 25px;
+     margin: 20px auto;
+     max-width: 700px;
+     border-radius: 12px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+     line-height: 1.6;
+     font-weight: bold;
+}
+
+.apresentacao {
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.apresentacao:hover {
+     transform: scale(1.05) rotate(1deg);
+     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+#profissao {
+     font-size: 20px;
+     font-weight: 600;
+     color: #e94e77;
+     text-align: center;
+     margin: 40px auto;
+     max-width: 900px;
+     overflow: hidden;
+     animation: typing 3s linear forwards;
+     opacity: 0;
+}
+
+@keyframes typing {
+     0% {
+          opacity: 0;
+          max-height: 0;
+     }
+     100% {
+          opacity: 1;
+          max-height: 500px;
+     }
+}
+
+.minha-foto {
+     display: block;
+     margin: 30px auto;
+     width: 220px;
+     height: 220px;
+     border-radius: 50%;
+     object-fit: cover;
+     border: 4px solid #4a90e2;
+     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+     transition: transform 0.3s ease;
+}
+
+.minha-foto:hover {
+     transform: scale(1.05);
+}
+
+h2 {
+     text-align: center;
+     color: #4a90e2;
+     margin-top: 40px;
+     font-size: 28px;
+}
+
+.hobbies {
+     list-style-type: none;
+     padding: 0;
+     display: flex;
+     justify-content: center;
+     gap: 30px;
+     margin-top: 20px;
+}
+
+.hobbies li {
+     background: #fefefe;
+     padding: 15px 20px;
+     border-radius: 10px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+     font-weight: 500;
+     color: #4a90e2;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobbies li:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+     color: #e94e77;
+     transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
