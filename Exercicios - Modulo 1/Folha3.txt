@@ -1,0 +1,95 @@
+AULA 8 - EXERCÍCIOS
+
+Exemplo fácil usando Mermaid.js : Essa é a forma mais simples. Você só precisa copiar o código abaixo, salvar como index.html e abrir no navegador:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Fluxograma - Atravessar a rua</title>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .mermaid {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="mermaid">
+    flowchart TD
+      A([Início]) --> B[Ir até a faixa]
+      B --> C[Olhar para os lados]
+      C --> D{Veio carro?}
+      D -->|Sim| E[Esperar]
+      D -->|Não| F[Atravessar]
+      E --> C
+      F --> G([Fim])
+  </div>
+</body>
+</html>
+
+
+2. A exemplo em JavaScript (simulação no front-end): Esse código mostra a lógica de atravessar a rua e exibe as mensagens na tela:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Atravessar a rua</title>
+</head>
+<body>
+  <h1>Simulação: Atravessar a rua</h1>
+  <p id="resultado"></p>
+
+  <script>
+    // Passo 1: Ir até a faixa
+    let resultado = "Ir até a faixa de pedestres <br>";
+
+    // Passo 2: Olhar para os lados
+    resultado += "Olhar para os dois lados <br>";
+
+    // Passo 3: Decisão - veio carro?
+    let veioCarro = true; // tente mudar para false e veja o que acontece
+
+    if (veioCarro) {
+      resultado += "Veio carro → Esperar <br>";
+    } else {
+      resultado += "Não veio carro → Atravessar a rua <br>";
+    }
+
+    // Mostrar na tela
+    document.getElementById("resultado").innerHTML = resultado;
+  </script>
+</body>
+</html>
+
+Exercício 3: Memorização de Variáveis em JavaScript
+Objetivo: Fixar os conceitos de declaração de variáveis e seus usos.
+Tarefa: Preencha o código abaixo com a palavra correta (let, const ou var) e justifique brevemente sua escolha.
+javascript
+// 1. Declare uma variável para guardar o nome do usuário (pode mudar)
+______ nome = "Maria";
+
+// 2. Declare uma variável para guardar a data de nascimento (não muda)
+______ dataNascimento = "10/02/2000";
+
+// 3. Declare uma variável para o saldo bancário (pode mudar)
+______ saldo = 1000;
+
+// 4. Declare uma variável para o número de CPF (não muda)
+______ cpf = "123.456.789-00";
+
