@@ -1,0 +1,43 @@
+body {
+     margin: 0;
+     padding: 0;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     background: #fff1df;
+     height: 100vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 20px;
+}
+
+h1 {
+     font-size: 32px;
+     font-weight: bold;
+     color: rgb(8, 92, 59)
+}
+
+input {
+     border-radius: 35px;
+     width: 300px;
+     padding: 10px;
+}
+
+input::placeholder {
+     font-size: 16px;
+}
+
+button {
+     border-radius: 35px;
+     width: 150px;
+     padding: 10px;
+     background-color: rgb(8, 92, 59);
+     color: white;
+     border: none;
+     font-size: 16px;
+     cursor: pointer;
+}
+
+button:hover {
+     background-color: rgb(6, 70, 45);
+}

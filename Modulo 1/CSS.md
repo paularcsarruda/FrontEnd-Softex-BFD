@@ -8,7 +8,6 @@ seletor {
 https://www.notion.so/CSS-2624387b20398045baa7c31cf7f3d897
 
 Dica seletor universal e body básico:
-
 * {
   margin: 0;
   padding: 0;
