@@ -1,0 +1,8 @@
+.caixa {
+     width: 200px;
+     height: 100px;
+     background-color: lightblue;
+     padding: 20px;
+     border: 2px solid rgb(61, 44, 121);
+     margin: 30px;
+}
