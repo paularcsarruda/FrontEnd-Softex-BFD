@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <meta charset="UTF-8">
+     <title>Atravessar a rua</title>
+</head>
+
+<body>
+     <h1>Simulação: Atravessar a rua</h1>
+     <p id="resultado"></p>
+
+     <script>
+          // Passo 1: Ir até a faixa
+          let resultado = "Ir até a faixa de pedestres <br>";
+
+          // Passo 2: Olhar para os lados
+          resultado += "Olhar para os dois lados <br>";
+
+          // Passo 3: Decisão - veio carro?
+          let veioCarro = true; // tente mudar para false e veja o que acontece
+
+          if (veioCarro) {
+               resultado += "Veio carro → Esperar <br>";
+          } else {
+               resultado += "Não veio carro → Atravessar a rua <br>";
+          }
+
+          // Mostrar na tela
+          document.getElementById("resultado").innerHTML = resultado;
+     </script>
+</body>
+
+</html>
