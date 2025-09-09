@@ -2,3 +2,12 @@
 
 
 ### Repósitorio criado para documentar as aulas e desafios do curso de FronEnd - React do Bolsa Futuro Digital - Polo Softex/PE
+
+Conteúdo Previsto:
+- Git
+- GitHub
+- HTML
+- CSS
+- JavaScript
+- React Native
+- SoftSkill
