@@ -1,0 +1,4 @@
+Você foi contratado(a) para desenvolver a página inicial de uma agência de viagens
+com um visual sofisticado, moderno e profissional. Seu desafio será reproduzir o
+layout fornecido (arquivo pagina.png) utilizando HTML e CSS, aplicando boas práticas
+de estruturação e estilização.
