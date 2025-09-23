@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil com IA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --accent: #36D1DC;
+            --dark: #2D2B55;
+            --light: #F5F7FF;
+            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 420px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-header {
+            background: var(--gradient);
+            padding: 40px 20px 30px;
+            color: white;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .profile-title {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icon {
+            color: white;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .profile-content {
+            padding: 30px;
+        }
+
+        .profile-bio {
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .profile-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .skill {
+            background: var(--light);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--primary);
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .ai-generate-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .ai-generate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
+        }
+
+        .ai-generate-btn:active {
+            transform: translateY(0);
+        }
+
+        .api-info {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 20px;
+            line-height: 1.4;
+        }
+
+        .loading {
+            display: none;
+            margin: 20px 0;
+        }
+
+        .loading-dots {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary);
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+
+        @media (max-width: 480px) {
+            .profile-card {
+                max-width: 100%;
+            }
+            
+            .profile-header {
+                padding: 30px 20px 20px;
+            }
+            
+            .profile-image {
+                width: 110px;
+                height: 110px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <div class="profile-header">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80"
+                 alt="Foto de perfil" class="profile-image" id="profile-image">
+            <h1 class="profile-name" id="profile-name">Seu Nome</h1>
+            <p class="profile-title" id="profile-title">Desenvolvedor Front-End</p>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <div class="profile-content">
+            <p class="profile-bio" id="profile-bio">
+                Clique no botão abaixo para gerar uma biografia com IA!
+            </p>
+            
+            <div class="loading" id="loading">
+                <div class="loading-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <p style="margin-top: 10px; color: var(--primary);">Gerando conteúdo com IA...</p>
+            </div>
+            
+            <div class="profile-skills" id="profile-skills">
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">JavaScript</span>
+            </div>
+            
+            <button class="ai-generate-btn" onclick="generateContent()">
+                <i class="fas fa-robot"></i> Gerar com IA
+            </button>
+            
+            <p class="api-info">
+                * Esta demonstração simula a integração com APIs de IA. Em um projeto real,
+                você precisaria de uma chave de API para serviços como DeepSeek, OpenAI, etc.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Função para gerar conteúdo simulado (em um projeto real, isso viria de uma API)
+        function generateContent() {
+            // Mostrar animação de carregamento
+            document.getElementById('loading').style.display = 'block';
+            
+            // Nomes e títulos pré-definidos para simular a IA
+            const names = ['Ana Silva', 'Carlos Oliveira', 'Marina Santos', 'Ricardo Almeida', 'Fernanda Lima', 'Lucas Mendes', 'Juliana Costa'];
+            const titles = [
+                'Desenvolvedor Front-End Junior',
+                'Designer UI/UX',
+                'Especialista em React',
+                'Programador Full-Stack',
+                'Arquiteta de Software',
+                'Engenheiro de Dados',
+                'Product Manager'
+            ];
+            const bios = [
+                'Apaixonado por criar experiências web incríveis e acessíveis. Constantemente aprendendo novas tecnologias e frameworks.',
+                'Especialista em design centrado no usuário com foco em interfaces intuitivas e agradáveis.',
+                'Desenvolvedor com experiência em projetos de grande escala e arquiteturas modernas de front-end.',
+                'Profissional multidisciplinar com skills em desenvolvimento front-end e back-end.',
+                'Arquiteta de software com paixão por criar soluções escaláveis e de alto desempenho.',
+                'Especialista em transformar dados brutos em insights valiosos para tomada de decisões estratégicas.',
+                'Focada em criar produtos digitais que resolvem problemas reais dos usuários com soluções elegantes.'
+            ];
+            const skillsList = [
+                ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js'],
+                ['UI Design', 'UX Research', 'Figma', 'Adobe XD', 'Prototipagem'],
+                ['JavaScript', 'TypeScript', 'React', 'Vue', 'Angular'],
+                ['HTML', 'CSS', 'JavaScript', 'Python', 'PHP', 'MySQL'],
+                ['Arquitetura', 'Design Patterns', 'JavaScript', 'TypeScript', 'AWS'],
+                ['Python', 'SQL', 'Big Data', 'Machine Learning', 'Data Visualization'],
+                ['Product Strategy', 'User Research', 'Agile', 'Analytics', 'Prototyping']
+            ];
+            
+            // Simular tempo de resposta da API
+            setTimeout(() => {
+                // Selecionar aleatoriamente
+                const randomIndex = Math.floor(Math.random() * names.length);
+                
+                // Atualizar o conteúdo da página
+                document.getElementById('profile-name').textContent = names[randomIndex];
+                document.getElementById('profile-title').textContent = titles[randomIndex];
+                document.getElementById('profile-bio').textContent = bios[randomIndex];
+                
+                // Atualizar habilidades
+                const skillsContainer = document.getElementById('profile-skills');
+                skillsContainer.innerHTML = ''; // Limpar habilidades existentes
+                
+                skillsList[randomIndex].forEach(skill => {
+                    const skillElement = document.createElement('span');
+                    skillElement.classList.add('skill');
+                    skillElement.textContent = skill;
+                    skillsContainer.appendChild(skillElement);
+                });
+                
+                // Alterar a imagem (usando API de imagens aleatórias - em projeto real seria da IA)
+                document.getElementById('profile-image').src = `https://i.pravatar.cc/150?img=${Math.floor(Math.random() * 70)}`;
+                
+                // Esconder animação de carregamento
+                document.getElementById('loading').style.display = 'none';
+            }, 1500);
+        }
+
+        // Em um projeto real, a função usaria uma API de IA como:
+        /*
+        async function generateRealAIContent() {
+            const API_KEY = 'sua_chave_api_aqui';
+            const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${API_KEY}`
+                },
+                body: JSON.stringify({
+                    model: 'deepseek-chat',
+                    messages: [{ role: 'user', content: 'Gere uma biografia de desenvolvedor front-end' }],
+                    max_tokens: 100
+                })
+            });
+            const data = await response.json();
+            document.getElementById('profile-bio').textContent = data.choices[0].message.content;
+        }
+        */
+    </script>
+</body>
+</html>
