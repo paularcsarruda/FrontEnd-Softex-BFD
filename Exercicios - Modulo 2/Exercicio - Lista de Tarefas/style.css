@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+input {
+  flex: 1;
+  padding: 8px;
+}
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+li {
+  background: #eee;
+  padding: 8px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+.btn-remover {
+  background: red;
+  color: white;
+  border: none;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
