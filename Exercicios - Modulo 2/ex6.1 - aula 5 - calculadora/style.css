@@ -1,0 +1,56 @@
+.calculadora {
+     width: 300px;
+     background: #f0f0f0;
+     padding: 20px;
+     border-radius: 10px;
+     margin: 50px auto;
+}
+
+.display {
+     background: white;
+     height: 60px;
+     border: 2px solid #ccc;
+     border-radius: 5px;
+     margin-bottom: 15px;
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     padding: 0 15px;
+     font-size: 24px;
+     font-weight: bold;
+}
+
+.botoes {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 10px;
+}
+
+.btn {
+     height: 50px;
+     border: none;
+     border-radius: 5px;
+     font-size: 18px;
+     cursor: pointer;
+     background: white;
+     /* fundo branco para números */
+}
+
+.btn:hover {
+     background: #ddd;
+}
+
+.operador {
+     background: #ff9500;
+     color: white;
+}
+
+.igual {
+     background: #007aff;
+     color: white;
+}
+
+.limpar {
+     background: #ff3b30;
+     color: white;
+}

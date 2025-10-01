@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+     <meta charset="UTF-8">
+     <title>Temporizador Personalizado</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+     <div class="temporizador">
+          <h1>⏳ Temporizador</h1>
+          <input type="number" id="minutosInput" placeholder="Minutos" min="0">
+          <input type="number" id="segundosInput" placeholder="Segundos" min="0" max="59">
+          <div id="displayTempo">00:00</div>
+          <div class="botoes">
+               <button id="btnIniciar">▶️ Iniciar</button>
+               <button id="btnPausar">⏸️ Pausar</button>
+               <button id="btnZerar">⏹️ Reset</button>
+          </div>
+          <button id="btnModoEscuro">🌙 Modo Escuro</button>
+     </div>
+     <script src="script.js"></script>
+</body>
+
+</html>
