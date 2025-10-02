@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333;
+    padding: 30px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* TÍTULO */
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #0d47a1;
+}
+
+h2 {
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+
+.texto-apresentacao h2 {
+    text-align: center;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* IMAGEM */
+.perfil-container img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+/* APRESENTAÇÃO */
+.texto-apresentacao {
+    flex: 1;
+}
+
+.perfil {
+    position: static;
+    margin-left: 0;
+    text-align: left;
+}
+
+ul, ol {
+    margin-left: 20px;
+    padding-left: 10px;
+    margin-bottom: 50px;
+}
+
+ul li, ol li {
+    margin-bottom: 8px;
+}
+
+.perfil-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+a:hover {
+    color: #43A047;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    background-color: #1565c0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #388e3c;
+}
+
+footer {
+    max-width: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 70px;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #1565c0;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 600px) {
+    .perfil-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .texto-apresentacao {
+        text-align: center;
+    }
+}

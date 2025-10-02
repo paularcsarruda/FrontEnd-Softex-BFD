@@ -1,0 +1,7 @@
+Qual é o erro nesse código?
+<p>Primeiro parágrafo
+<p>Segundo parágrafo</p>
+
+Resposta:
+
+falta fechar a tag p </p>
