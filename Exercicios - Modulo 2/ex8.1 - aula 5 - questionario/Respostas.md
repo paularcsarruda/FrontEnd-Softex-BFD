@@ -166,7 +166,7 @@ console.log(soma);
 ## 7. Reflexão
 
 **Por que conhecer tipos e operadores ajuda a programar melhor?**  
-Evita erros de coerção de tipos, permite escrever condições corretas e torna o código mais previsível e robusto.  
+Evita erros de tipos, permite escrever condições corretas e torna o código mais previsível e robusto.  
 
 **Por que usar `console.log()` é importante para debug?**  
 Permite inspecionar valores em tempo real e entender o fluxo do programa, facilitando a identificação de bugs.  
