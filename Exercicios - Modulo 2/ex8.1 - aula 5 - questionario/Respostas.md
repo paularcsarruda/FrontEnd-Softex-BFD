@@ -19,7 +19,7 @@
 - `undefined`: variável foi declarada, mas não recebeu um valor.  
 
 **Explique `==` e `===`:**  
-- `==` (igualdade frouxa): compara valores fazendo coerção de tipo quando necessário.  
+- `==` (Igualdade Ampla ou Comparação de Valor): compara valores fazendo coerção de tipo quando necessário.  
 - `===` (igualdade estrita): compara valor **e** tipo, sem coerção.  
 ```js
 0 == false   // true
@@ -31,7 +31,7 @@
 ## 2. Operadores e Expressões
 
 **Operadores matemáticos:**  
-`+`, `-`, `*`, `/`, `%`, `**`  
+`+`, `-`, `*`, `/`, `%`
 
 **Operadores lógicos:**  
 `&&`, `||`, `!`  
