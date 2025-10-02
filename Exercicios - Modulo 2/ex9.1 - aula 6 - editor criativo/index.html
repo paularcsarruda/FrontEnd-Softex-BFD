@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Meu Editor de Texto Criativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- CABEÇALHO CRIATIVO -->
+        <header class="cabecalho">
+            <h1>✨ Meu Editor de Texto Mágico</h1>
+            <p class="subtitulo">Crie textos incríveis e veja as mudanças
+                em tempo real! 🎨</p>
+        </header>
+        <!-- CONTROLES DE FORMATAÇÃO -->
+        <div class="painel-controles">
+            <h3>🎛️ Ferramentas de Formatação:</h3>
+            <div class="grupo-botoes">
+                <!-- Botões de estilo de texto -->
+                <div class="grupo">
+                    <h4>Estilos:</h4>
+                    <button id="btnNegrito" class="btn-estilo" data-estilo="negrito">
+                        <strong>B</strong> Negrito
+                    </button>
+                    <button id="btnItalico" class="btn-estilo" data-estilo="italico">
+                        <em>I</em> Itálico
+                    </button>
+                    <button id="btnSublinhado" class="btn-estilo" data-estilo="sublinhado">
+                        <u>S</u> Sublinhado
+                    </button>
+                </div>
+
+                <!-- Controles de fonte -->
+                <div class="grupo">
+                    <h4>Fonte:</h4>
+                    <select id="selectFonte" class="controle">
+                        <option value="Arial">Arial - Moderna</option>
+                        <option value="Georgia">Georgia - Elegante</option>
+                        <option value="Courier New">Courier - Máquina</option>
+                        <option value="Comic Sans MS">Comic Sans - Divertida</option>
+                        <option value="Times New Roman">Times - Clássica</option>
+                        <option value="Impact">Impact - Forte</option>
+                        <option value="Lucida Console">Lucida - Terminal</option>
+                        <option value="Papyrus">Papyrus - Egípcio</option>
+
+                    </select>
+                </div>
+                <!-- Cores -->
+                <div class="grupo">
+                    <h4>Cores:</h4>
+                    <input type="color" id="corTexto" value="#000000" class="controle">
+                    <span id="nomeCor">Preto</span>
+                </div>
+
+                <div class="grupo">
+                    <h4>Tamanho:</h4>
+                    <input type="range" id="tamanhoFonte" min="10" max="50" value="16" class="controle">
+                    <span id="valorTamanho">16px</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alinhamento -->
+        <div class="grupo">
+            <h4>Alinhamento:</h4>
+            <button id="btnEsquerda" class="btn-estilo" data-alinhamento="left">⬅️
+                Esquerda</button>
+            <button id="btnCentro" class="btn-estilo" data-alinhamento="center">🔘
+                Centro</button>
+            <button id="btnDireita" class="btn-estilo" data-alinhamento="right">➡️
+                Direita</button>
+        </div>
+
+        <!-- ÁREA DE EDIÇÃO PRINCIPAL -->
+        <div class="area-edicao">
+            <div class="lado-esquerdo">
+                <h3>📝 Digite seu texto aqui:</h3>
+                <textarea id="areaTexto" placeholder="Comece a digitar sua história criativa...
+✍️"></textarea>
+                <div class="estatisticas">
+                    <div class="contador">
+                        <span>📊 Caracteres: </span>
+                        <strong id="contadorCaracteres">0</strong>
+                    </div>
+                    <div class="contador">
+                        <span>📄 Palavras: </span>
+                        <strong id="contadorPalavras">0</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="lado-direito">
+                <h3>👀 Visualização em Tempo Real:</h3>
+                <div class="visualizacao-container">
+                    <div id="textoPreview" class="texto-preview">
+                        Sua obra-prima aparecerá aqui... 🌟
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SEÇÃO CRIATIVA - TEMAS E EXTRAS -->
+        <div class="secao-criativa">
+            <h3>🎨 Personalização Criativa</h3>
+            <div class="temas-cores">
+                <h4>🎭 Escolha um Tema:</h4>
+                <div class="botoes-temas">
+                    <button class="btn-tema" data-tema="claro" data-cor="#ffffff">☀️ Claro</button>
+                    <button class="btn-tema" data-tema="escuro" data-cor="#1a1a1a">🌙 Escuro</button>
+                    <button class="btn-tema" data-tema="azul" data-cor="#e6f2ff">🔵 Azul</button>
+                    <button class="btn-tema" data-tema="rosa" data-cor="#ffe6f2">🌸 Rosa</button>
+                    <button class="btn-tema" data-tema="verde" data-cor="#e6ffe6">🍏 Verde</button>
+                    <button class="btn-tema" data-tema="ouro">🌟 Dourado</button>
+                    <button class="btn-tema" data-tema="roxo">💜 Roxo</button>
+                    <button class="btn-tema" data-tema="pastel">🎀 Pastel</button>
+                </div>
+            </div>
+            <div class="extras-criativos">
+                <h4>✨ Toques Especiais:</h4>
+                <button id="btnEmojis" class="btn-extra">😊 Adicionar
+                    Emojis</button>
+                <button id="btnBorda" class="btn-extra">🖼️ Borda
+                    Decorativa</button>
+                <button id="btnSombra" class="btn-extra">💫 Efeito
+                    Sombra</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="estatisticas">
+        <div class="contador">
+            <span>📊 Caracteres: </span>
+            <strong id="contadorCaracteres">0</strong>
+        </div>
+        <div class="contador">
+            <span>📄 Palavras: </span>
+            <strong id="contadorPalavras">0</strong>
+        </div>
+        <div class="contador">
+            <span>📏 Linhas: </span>
+            <strong id="contadorLinhas">0</strong>
+        </div>
+    </div>
+
+    <!-- CONTROLES FINAIS -->
+    <div class="controles-finais">
+        <button id="btnSalvar" class="btn-grande">💾 Salvar
+            Texto</button>
+        <button id="btnLimpar" class="btn-grande">🗑️ Limpar
+            Tudo</button>
+        <button id="btnCopiar" class="btn-grande">📋 Copiar
+            Texto</button>
+    </div>
+    <!-- MENSAGENS -->
+    <div id="mensagem" class="mensagem"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
